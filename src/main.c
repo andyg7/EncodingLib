@@ -35,11 +35,3 @@ int main(int argc, const char *argv[])
 	*/
 	return 0;
 }
-
-int valid_params(int argc, const char *argv[])
-{
-	if (argc != 3) {
-		return 0;
-	}
-	return 1;
-}
