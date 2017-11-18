@@ -9,7 +9,6 @@
 int main(int argc, const char *argv[])
 {
 	if (valid_args(argc, argv) == 0) {
-		printf("%s\n", "must provide an input and output file");
 		return 0;
 	} 
 

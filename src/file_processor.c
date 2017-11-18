@@ -25,7 +25,7 @@ int base64_encode_file(char *input_file_name, char *output_file_name)
 		if (bytes_read < INPUT_BUF_NUM_BYTES) {
 			eof = 1;
 		}
-		encode_n(input_buf, output_buf, bytes_read);
+		encode_base64(input_buf, output_buf, bytes_read);
 		int bytes_to_write = base64_num_bytes(bytes_read);
 		fwrite(output_buf, sizeof(char), bytes_to_write, fo);
 	}

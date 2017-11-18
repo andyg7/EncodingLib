@@ -1,5 +1,4 @@
-int encode(char *i, char *o);
-int encode_n(char *i, char *o, int n);
+int encode_base64(char *i, char *o, int n);
 int get_index(char c);
 char get_char(int i);
 unsigned char extract_front(unsigned char c);
