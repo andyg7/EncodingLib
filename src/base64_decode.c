@@ -31,7 +31,6 @@ int encode_n(char *input, char *output, int num_bytes)
 		output_index = output_index + 4;
 	}
 	if (num_bytes % 3 == 0) {
-		printf("%s\n", "got a cmultple of 3 nice!");
 		return 1;
 	}
 
@@ -196,7 +195,7 @@ unsigned char extract_back(unsigned char c)
 
 int base64_num_bytes(int binary_num_bytes)
 {
-	int needed_bytes = binary_num_bytes / 3;
+	int needed_bytes = 4 * (binary_num_bytes / 3);
 	if (binary_num_bytes % 3 != 0) {
 		needed_bytes += 4;
 	}
