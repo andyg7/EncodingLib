@@ -1,10 +1,10 @@
 CC=gcc
 OBJS=main.o base64_decode.o bit_ops.o file_processor.o args_parser.o
 HEADERS=base64_decode.h bit_ops.h file_processor.h args_parser.h
+PROG_NAME=codeit
 
-
-a.out: $(OBJS)
-	$(CC) -o a.out $(OBJS) 
+$(PROG_NAME): $(OBJS)
+	$(CC) -o $(PROG_NAME) $(OBJS) 
 	mv *.o ../build
 
 main.o: main.c
@@ -27,4 +27,4 @@ args_parser.o: args_parser.c $(HEADERS)
 clean:
 	rm -rf $(OBJS)
 
-all: clean a.out
+all: clean $(PROG_NAME)
