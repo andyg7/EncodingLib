@@ -10,8 +10,4 @@ else
 	exit 1
 fi
 
-ARG1=$1
-shift
-ARG2=$1
-
-./a.out $ARG1 $ARG2
+./codeit $@
