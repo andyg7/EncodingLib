@@ -28,7 +28,7 @@ int set_bit(unsigned char *c, int b, int p)
 	unsigned char mask = ~(1 << p);
 	unsigned char c_zero_in_bit = (*c) & mask;
 	unsigned char b_pushed = b << p;
-	*c = (*c | b_pushed);
+	*c = (c_zero_in_bit | b_pushed);
 	return 0;
 }
 
