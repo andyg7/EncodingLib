@@ -8,29 +8,17 @@
 
 int main(int argc, const char *argv[])
 {
-	if (valid_args(argc, argv) == 0) {
+	int valid_args_provided = valid_args(argc, argv);
+	if (!valid_args_provided) {
 		return 0;
-	} 
-
-	int encoded = base64_encode_file((char *) argv[1], (char *) argv[2]);
-	/*
-	const char *input_file_name = argv[1];
-	printf("%s\n", input_file_name);
-	const char *output_file_name = argv[2];
-	printf("%s\n", output_file_name);
-
-	char *a = "any carnal pleasure.\0";
-	int a_len = strnlen(a, 100);
-	int b_len = 4 * (a_len / 3);
-	if (a_len % 3 != 0) {
-		b_len += 4;
 	}
-
-	char b[b_len + 1];
-	b[b_len] = '\0';
-	printf("%s\n", a);
-	encode(a, b);
-	printf("%s\n", b);
-	*/
+	char *input_file_name = (char *) argv[2];
+	char *output_file_name = (char *) argv[3];
+	int encode = should_encode(argc, argv);
+	if (encode) {
+		base64_encode_file(input_file_name, output_file_name);
+	} else {
+		base64_decode_file(input_file_name, output_file_name);
+	}
 	return 0;
 }
