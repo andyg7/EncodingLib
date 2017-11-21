@@ -5,6 +5,8 @@
 const char *HELP_ARG = "--help";
 const char *ENCODE_ARG = "-e";
 const char *DECODE_ARG = "-d";
+const char *HEX_ARG = "--hex";
+const char *BASE64_ARG = "--base64";
 const char *help_string = "format: a.out <binaryfile> <outputfile>";
 
 int valid_args(int argc, const char *argv[])
@@ -49,4 +51,22 @@ int should_decode(int argc, const char *argv[])
 		should_decode = 1;
 	}
 	return should_decode;
+}
+
+int hex_arg(int argc, const char *argv[])
+{
+	int is_hex = 0;
+	if (strncmp(argv[2], HEX_ARG, strnlen(HEX_ARG, 1000)) == 0) {
+		is_hex = 1;
+	}
+	return is_hex;
+}
+
+int base64_arg(int argc, const char *argv[])
+{
+	int is_base64 = 0;
+	if (strncmp(argv[2], BASE64_ARG, strnlen(BASE64_ARG, 1000)) == 0) {
+		is_base64 = 1;
+	}
+	return is_base64;
 }
