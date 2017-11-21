@@ -19,11 +19,12 @@ e.g. ./codeit -e --base64 binary.txt output.txt
 
 e.g. ./codeit -d --base64 output.txt test.txt
 
+This will (or at least certainly should!) result in test.txt being identical to binary.txt
+
 e.g. ./codeit -e --hex binary_hex.txt output_hex.txt
 
 e.g. ./codeit -d --hex output_hex.txt test_hex.txt
 
-This will (or at least certainly should!) result in test.txt being identical to binary.txt
 
 ### TODO
 - Add other encoding schemes
