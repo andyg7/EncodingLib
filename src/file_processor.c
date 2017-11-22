@@ -3,6 +3,7 @@
 #include <string.h>
 #include "base64_decode.h"
 #include "hex_decode.h"
+#include "binary_decode.h"
 
 int base64_encode_file(char *input_file_name, char *output_file_name)
 {
@@ -133,5 +134,46 @@ int hex_decode_file(char *input_file_name, char *output_file_name)
 	fclose(fo);
 	return 0;
 
+	return 0;
+}
+
+int binary_encode_file(char *input_file_name, char *output_file_name)
+{
+	FILE *fi = fopen(input_file_name, "r");	
+	FILE *fo = fopen(output_file_name, "w+");	
+
+	int INPUT_BUF_NUM_BYTES = 1;
+	char input_buf[INPUT_BUF_NUM_BYTES + 1];
+	input_buf[INPUT_BUF_NUM_BYTES] = '\0';
+
+	int OUTPUT_BUF_NUM_BYTES = (INPUT_BUF_NUM_BYTES * 8);
+	char output_buf[OUTPUT_BUF_NUM_BYTES + 1];
+	output_buf[OUTPUT_BUF_NUM_BYTES] = '\0';
+
+	char new_line[2] = {'\n', '\0'};
+	char space[2] = {' ', '\0'};
+	int eof = 0;
+	int interation = 0;
+	while (eof == 0) {
+		memset(input_buf, 0, INPUT_BUF_NUM_BYTES);
+		memset(output_buf, 0, OUTPUT_BUF_NUM_BYTES);
+
+		int bytes_read = fread(input_buf, sizeof(char), INPUT_BUF_NUM_BYTES, fi);
+		if (bytes_read < INPUT_BUF_NUM_BYTES) {
+			eof = 1;
+		}
+		encode_binary(input_buf, output_buf, bytes_read);
+		int bytes_to_write = bytes_read * 8;
+		fwrite(output_buf, sizeof(char), bytes_to_write, fo);
+		if (interation % 4 == 3) {
+			fwrite(new_line, sizeof(char), 1, fo);
+		} else {
+			fwrite(space, sizeof(char), 1, fo);
+		}
+		interation++;
+	}
+
+	fclose(fi);
+	fclose(fo);
 	return 0;
 }

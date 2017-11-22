@@ -7,6 +7,7 @@ const char *ENCODE_ARG = "-e";
 const char *DECODE_ARG = "-d";
 const char *HEX_ARG = "--hex";
 const char *BASE64_ARG = "--base64";
+const char *BINARY_ARG = "--binary";
 const char *help_string = "format: a.out <binaryfile> <outputfile>";
 
 int valid_args(int argc, const char *argv[])
@@ -66,6 +67,15 @@ int base64_arg(int argc, const char *argv[])
 {
 	int is_base64 = 0;
 	if (strncmp(argv[2], BASE64_ARG, strnlen(BASE64_ARG, 1000)) == 0) {
+		is_base64 = 1;
+	}
+	return is_base64;
+}
+
+int binary_arg(int argc, const char *argv[])
+{
+	int is_base64 = 0;
+	if (strncmp(argv[2], BINARY_ARG, strnlen(BINARY_ARG, 1000)) == 0) {
 		is_base64 = 1;
 	}
 	return is_base64;

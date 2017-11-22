@@ -1,6 +1,6 @@
 CC=gcc
-OBJS=main.o base64_decode.o bit_ops.o file_processor.o args_parser.o hex_decode.o
-HEADERS=base64_decode.h bit_ops.h file_processor.h args_parser.h hex_decode.h
+OBJS=main.o base64_decode.o bit_ops.o file_processor.o args_parser.o hex_decode.o binary_decode.o
+HEADERS=base64_decode.h bit_ops.h file_processor.h args_parser.h hex_decode.h binary_decode.h
 PROG_NAME=codeit
 
 $(PROG_NAME): $(OBJS)
@@ -24,6 +24,9 @@ args_parser.o: args_parser.c $(HEADERS)
 
 hex_decode.o: hex_decode.c $(HEADERS)
 	$(CC) -c hex_decode.c
+
+binary_decode.o: binary_decode.c $(HEADERS)
+	$(CC) -c binary_decode.c
 
 .PHONY: clean
 
