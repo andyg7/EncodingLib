@@ -54,6 +54,7 @@ e.g.  ./codeit -e --binary -p binary_hex.txt output_hex.txt
 - Add some unit tests along with an automated testing suite.
 - Improve the pretty print functionality. e.g. make it prettier, add addresses like xxd does
 - Get the decoders to understand the pretty print functionality.
+- Improve the Makfile so the binaries and/or object files get put somewhere nicer
 
 ### FAQ
 - Should I use this app for encoding/decoding my files? Probably not. There are already libraries that will do this for you.
