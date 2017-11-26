@@ -4,9 +4,12 @@ App for encoding and decoding binary files
 
 ### Motivation
 Often you'll want to work with binary files. However, binary files usually don't make much sense when we open them up in 
-a text editor or want to view them with our own eyes. Encoding is a way for us to 
+a text editor or want to view them with our own eyes. e.g. encrypted files, or binary programs. Encoding is a way for us to 
 translate binary files into some sort of language we can better make sense of. It also reduces the chance of us 
-corrupting files when we send them around (e.g. copy and paste)
+corrupting files when we send them around (e.g. copy and paste). We don't lose the original
+contents of the binary file, we simply translate it into text that is easier for us humans to
+look at and manipulate. Of course, with encoding comes decoding. Decoding is simply the process
+of translating the encoded file back to it's true original contents.
 
 ### Schemes supported
 - Base64 (https://en.wikipedia.org/wiki/Base64)
