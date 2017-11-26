@@ -25,7 +25,11 @@ int main(int argc, const char *argv[])
 
 	if (encode) {
 		if (hex_func) {
-			hex_encode_file(input_file_name, output_file_name);
+			if (pretty_p_arg) {
+				hex_encode_file_pretty(input_file_name, output_file_name);
+			} else {
+				hex_encode_file(input_file_name, output_file_name);
+			}
 		} else if (base64_func) {
 			base64_encode_file(input_file_name, output_file_name);
 		} else if (binary_func) {
