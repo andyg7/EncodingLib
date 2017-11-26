@@ -150,7 +150,6 @@ int binary_encode_file(char *input_file_name, char *output_file_name)
 	char output_buf[OUTPUT_BUF_NUM_BYTES + 1];
 	output_buf[OUTPUT_BUF_NUM_BYTES] = '\0';
 
-	//char new_line[2] = {'\n', '\0'};
 	char space[2] = {' ', '\0'};
 	int eof = 0;
 	int interation = 0;
@@ -165,13 +164,6 @@ int binary_encode_file(char *input_file_name, char *output_file_name)
 		encode_binary(input_buf, output_buf, bytes_read);
 		int bytes_to_write = bytes_read * 8;
 		fwrite(output_buf, sizeof(char), bytes_to_write, fo);
-		/*
-		   if (interation % 4 == 3) {
-		   fwrite(new_line, sizeof(char), 1, fo);
-		   } else {
-		   fwrite(space, sizeof(char), 1, fo);
-		   }
-		   */
 		interation++;
 	}
 
