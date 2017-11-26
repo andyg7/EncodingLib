@@ -12,6 +12,10 @@ contents of the binary file, we simply translate it into text that is easier for
 look at and manipulate. Of course, with encoding comes decoding. Decoding is simply the process
 of translating the encoded file back to it's true original contents.
 
+### Why did I build this?
+To learn about how binary files get encoded. e.g. files after being encrypted often get encoded
+in hex/base64
+
 ### Schemes supported
 - Base64 (https://en.wikipedia.org/wiki/Base64)
 - Hex (https://en.wikipedia.org/wiki/Hexadecimal)
