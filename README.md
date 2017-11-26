@@ -60,4 +60,5 @@ e.g.  ./codeit -e --binary -p binary_hex.txt output_hex.txt
   Those libraries are better too.
 - Then why did you write this code? For fun.
 - Can I contribute? Sure! Feel free to fork and submit a pull request with any sort of
-  changes/additions. Take a look at the TODO section. 
+  changes/additions/bug fixes etc. Take a look at the TODO section for some ideas. An easy one
+  right now would be to add an automated testing suite.
