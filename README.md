@@ -52,8 +52,12 @@ e.g.  ./codeit -e --binary -p binary_hex.txt output_hex.txt
 
 ### TODO
 - Add some unit tests along with an automated testing suite.
+- Improve the pretty print functionality. e.g. make it prettier, add addresses like xxd does
+- Get the decoders to understand the pretty print functionality.
 
 ### FAQ
 - Should I use this app for encoding/decoding my files? Probably not. There are already libraries that will do this for you.
   Those libraries are better too.
 - Then why did you write this code? For fun.
+- Can I contribute? Sure! Feel free to fork and submit a pull request with any sort of
+  changes/additions. Take a look at the TODO section. 
