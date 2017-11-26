@@ -50,3 +50,15 @@ void print_binary(unsigned char c)
 	printf("%s\n", s);
 }
 
+int get_value(unsigned char *c)
+{
+	int sum_so_far = 0;
+	for (int i = 0; i < 8; i++) {
+		char curr_char = *(c + i);
+		int b = get_bit(curr_char, i);
+		if (b == 1) {
+			sum_so_far = sum_so_far + (2 ^ i);
+		}
+	}
+	return sum_so_far;
+}

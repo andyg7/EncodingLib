@@ -32,6 +32,8 @@ int main(int argc, const char *argv[])
 			hex_decode_file(input_file_name, output_file_name);
 		} else if (base64_func) {
 			base64_decode_file(input_file_name, output_file_name);
+		} else if (binary_func) {
+			binary_decode_file(input_file_name, output_file_name);
 		}
 
 	}
