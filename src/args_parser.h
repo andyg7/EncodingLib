@@ -4,3 +4,6 @@ int should_decode(int argc, const char *argv[]);
 int hex_arg(int argc, const char *argv[]);
 int base64_arg(int argc, const char *argv[]);
 int binary_arg(int argc, const char *argv[]);
+int pretty_arg(int argc, const char *argv[]);
+int get_input_file_arg_index(int argc, const char *argv[]);
+int get_output_file_arg_index(int argc, const char *argv[]);

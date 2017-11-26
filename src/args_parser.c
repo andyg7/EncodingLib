@@ -6,6 +6,7 @@ const char *HELP_ARG = "--help";
 const char *ENCODE_ARG = "-e";
 const char *DECODE_ARG = "-d";
 const char *HEX_ARG = "--hex";
+const char *PRETTY_PRINT_ARG = "-p";
 const char *BASE64_ARG = "--base64";
 const char *BINARY_ARG = "--binary";
 const char *help_string = "format: a.out <binaryfile> <outputfile>";
@@ -79,4 +80,35 @@ int binary_arg(int argc, const char *argv[])
 		is_base64 = 1;
 	}
 	return is_base64;
+}
+
+int pretty_arg(int argc, const char *argv[])
+{
+	int is_pretty_print = 0;
+	for (int i = 0; i < argc; i++) {
+		if (strncmp(argv[3], PRETTY_PRINT_ARG, strnlen(HEX_ARG, 1000)) == 0) {
+			is_pretty_print = 1;
+		}
+	}
+	return is_pretty_print;
+}
+
+int get_input_file_arg_index(int argc, const char *argv[])
+{
+	for (int i = 1; i < argc; i++) {
+		const char *t = argv[i];		
+		if (strncmp(t, "-", 1) != 0) {
+			return i;			
+		}
+	}
+	return -1;
+}
+
+int get_output_file_arg_index(int argc, const char *argv[])
+{
+	int input_index = get_input_file_arg_index(argc, argv);
+	if (input_index + 1 >= argc) {
+		return -1;
+	}
+	return input_index + 1;
 }

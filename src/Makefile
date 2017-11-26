@@ -5,7 +5,6 @@ PROG_NAME=codeit
 
 $(PROG_NAME): $(OBJS)
 	$(CC) -o $(PROG_NAME) $(OBJS) 
-	mv *.o ../build
 
 main.o: main.c
 	$(CC) -c main.c
