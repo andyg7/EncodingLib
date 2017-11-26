@@ -31,7 +31,11 @@ int main(int argc, const char *argv[])
 				hex_encode_file(input_file_name, output_file_name);
 			}
 		} else if (base64_func) {
-			base64_encode_file(input_file_name, output_file_name);
+			if (pretty_p_arg) {
+				base64_encode_file_pretty(input_file_name, output_file_name);
+			} else {
+				base64_encode_file(input_file_name, output_file_name);
+			}
 		} else if (binary_func) {
 			if (pretty_p_arg) {
 				binary_encode_file_pretty(input_file_name, output_file_name);
