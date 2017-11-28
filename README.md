@@ -63,7 +63,7 @@ e.g.  ./codeit -e --binary -p binary_hex.txt output_hex.txt
 - Get the decoders to understand the pretty print functionality.
 - Improve the Makfile so the binaries and/or object files get put somewhere nicer
 - Add stdin/stdout support
-- Improve command line parsing so that the args can appear in and order
+- Improve command line parsing so that the args can appear in any order
 
 ### Technologies 
 - Language: C
