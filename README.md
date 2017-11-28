@@ -1,7 +1,7 @@
 # EncodingLib
 
 ### What is this? 
-App for encoding and decoding binary files 
+An app for encoding and decoding binary files 
 
 ### Motivation
 Often you'll want to work with binary files. However, binary files usually don't make much sense when we open them up in 
