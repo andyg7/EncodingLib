@@ -51,7 +51,9 @@ decoder can't understand files when they're printed in the nicer format. Thus, o
 in pretty print format, and decode back to the original.
 
 e.g.  ./codeit -e --base64 -p binary_hex.txt output_hex.txt
+
 e.g.  ./codeit -e --hex -p binary_hex.txt output_hex.txt
+
 e.g.  ./codeit -e --binary -p binary_hex.txt output_hex.txt
 
 
